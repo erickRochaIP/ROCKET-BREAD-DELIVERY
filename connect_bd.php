@@ -5,14 +5,7 @@
 </head>
 <body>
 <?php
-$db = 'CidadeEstado';
-$host = '127.0.0.1';
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host; dbname=$db; charset=$charset";
-
-$user = '2018952166';
-$pass = 'coltec2020';
+include 'db_const.php';
 
  try {
     $conec = new PDO($dsn, $user, $pass);
