@@ -28,6 +28,10 @@ class Produto {
 		return $this->ativo;
 	}
 
+	public function setId($id){
+		$this->id = $id;
+	}
+
 	public function setNome($nome){
 		$this->nome = $nome;
 	}
@@ -78,6 +82,30 @@ class Produto {
     	$stmt->execute([$this->nome, $this->descricao, $this->preco, $this->ativo]);
     	
     	return $stmt;
+	}
+
+	public function getAllProduto(){
+		require_once 'db_const.php';
+    	$conec = new PDO($dsn, $user, $pass);
+    	$sql = 'SELECT id, nome, descricao, preco, ativo FROM produto;';
+    	$stmt = $conec->prepare($sql);
+    	$stmt->setFetchMode(PDO::FETCH_ASSOC);
+    	$stmt->execute();
+    	$prods = array();
+    	while ($row = $stmt->fetch())
+    	{
+    		$prod = new Produto();
+    		$prod->setId($row['id']);
+    		$prod->setNome($row['nome']);
+    		$prod->setDescricao($row['descricao']);
+    		$prod->setPreco($row['preco']);
+    		$prod->setAtivo($row['ativo']);
+
+    		$prods[] = $prod;
+
+    	}
+
+    	return $prods;
 	}
 }
 ?>

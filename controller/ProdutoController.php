@@ -23,6 +23,14 @@ class ProdutoController {
 		}
 
 	}
+
+	public function getAllProduto($get) {
+		$produto = new Produto();
+
+		$_REQUEST['produtos'] = $produto->getAllProduto();
+
+		require_once 'view/all_produtos_view.php';
+	}
 }
 
 ?>
