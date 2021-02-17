@@ -6,8 +6,8 @@ DROP TABLE IF EXISTS usuario;
 
 CREATE TABLE usuario(
   id int(11) NOT NULL AUTO_INCREMENT,
-  nomeusuario char(35) NOT NULL,
-  senha char(35),
+  nomeusuario varchar(1000) NOT NULL,
+  senha varchar(1000),
   nivelacesso int(11) NOT NULL,
   PRIMARY KEY(id)
 );
@@ -25,9 +25,9 @@ DROP TABLE IF EXISTS produto;
 
 CREATE TABLE produto(
   id int(11) NOT NULL AUTO_INCREMENT,
-  nome char(35) NOT NULL,
-  descricao char(35),
-  preco char(35),
+  nome varchar(1000) NOT NULL,
+  descricao varchar(1000),
+  preco varchar(1000),
   ativo int(11),
   PRIMARY KEY(id)
 );
@@ -65,9 +65,9 @@ DROP TABLE IF EXISTS endereco;
 
 CREATE TABLE endereco(
   id int(11) NOT NULL AUTO_INCREMENT,
-  rua char(35),
-  bairro char(35),
+  rua varchar(1000),
+  bairro varchar(1000),
   numero int(11),
-  cidade char(35),
+  cidade varchar(1000),
   PRIMARY KEY(id)
 );
