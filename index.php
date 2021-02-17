@@ -7,5 +7,5 @@ $classe .= 'Controller';
 require_once 'controller/'.$classe.'.php';
 
 $obj = new $classe();
-$obj->$metodo(1);
+$obj->$metodo($_GET);
 ?>

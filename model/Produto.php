@@ -69,5 +69,15 @@ class Produto {
 
     	return $this;
 	}
+
+	public function saveProduto(){
+		require_once 'db_const.php';
+    	$conec = new PDO($dsn, $user, $pass);
+    	$sql = 'INSERT INTO produto(nome, descricao, preco, ativo) VALUES(?, ?, ?, ?)';
+    	$stmt = $conec->prepare($sql);
+    	$stmt->execute([$this->nome, $this->descricao, $this->preco, $this->ativo]);
+    	
+    	return $stmt;
+	}
 }
 ?>
