@@ -56,7 +56,7 @@ class Produto {
 	}
 
 	public function getProdutoById($id){
-		require_once 'db_const.php';
+		require_once __DIR__ .'/../db_const.php';
     	$conec = new PDO($dsn, $user, $pass);
     	$sql = 'SELECT id, nome, descricao, preco, ativo FROM produto WHERE id = '.$id.';';
     	$stmt = $conec->prepare($sql);
@@ -75,7 +75,7 @@ class Produto {
 	}
 
 	public function saveProduto(){
-		require_once 'db_const.php';
+		require_once __DIR__ .'/../db_const.php';
     	$conec = new PDO($dsn, $user, $pass);
     	$sql = 'INSERT INTO produto(nome, descricao, preco, ativo) VALUES(?, ?, ?, ?)';
     	$stmt = $conec->prepare($sql);
@@ -85,7 +85,7 @@ class Produto {
 	}
 
 	public function getAllProduto(){
-		require_once 'db_const.php';
+		require_once __DIR__ .'/../db_const.php';
     	$conec = new PDO($dsn, $user, $pass);
     	$sql = 'SELECT id, nome, descricao, preco, ativo FROM produto;';
     	$stmt = $conec->prepare($sql);

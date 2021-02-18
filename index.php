@@ -4,7 +4,7 @@ $metodo = $_GET['acao'];
 
 $classe .= 'Controller';
 
-require_once 'controller/'.$classe.'.php';
+require_once __DIR__ .'/controller/'.$classe.'.php';
 
 $obj = new $classe();
 $obj->$metodo($_GET);

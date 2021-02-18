@@ -1,6 +1,5 @@
-DROP DATABASE IF EXISTS rocketBreadDelivery;
-CREATE DATABASE IF NOT EXISTS rocketBreadDelivery;
-USE rocketBreadDelivery;
+CREATE DATABASE IF NOT EXISTS rbd;
+USE rbd;
 
 DROP TABLE IF EXISTS usuario;
 

@@ -1,5 +1,5 @@
 <?php
-require_once 'model/Produto.php';
+require_once __DIR__ .'/../model/Produto.php';
 
 class ProdutoController {
 	public function getProdutoId($get) {
@@ -7,7 +7,7 @@ class ProdutoController {
 
 		$_REQUEST['produtos'] = $produto->getProdutoById($get['id']);
 
-		require_once 'view/produto_view.php';
+		require_once __DIR__ .'/../view/produto_view.php';
 	}
 
 	public function saveProduto($get) {
@@ -29,7 +29,7 @@ class ProdutoController {
 
 		$_REQUEST['produtos'] = $produto->getAllProduto();
 
-		require_once 'view/all_produtos_view.php';
+		require_once __DIR__ .'/../view/all_produtos_view.php';
 	}
 }
 

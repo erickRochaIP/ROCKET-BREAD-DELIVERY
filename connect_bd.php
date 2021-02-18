@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-require_once 'db_const.php';
+require_once __DIR__ .'/db_const.php';
 
  try {
     $conec = new PDO($dsn, $user, $pass);
