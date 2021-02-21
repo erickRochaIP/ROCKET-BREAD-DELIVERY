@@ -11,6 +11,11 @@
 			<img src="bread_logo.png" height="100px">
 		</div>
 	</div>
+	<?php
+	if (isset($_REQUEST['mensagem'])){
+		echo $_REQUEST['mensagem'];
+	}
+	?>
 
 	<div class="form-login">
 		<form action="post.php" method="post" id="formLogin">
