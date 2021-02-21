@@ -5,5 +5,6 @@
 </head>
 <body>
 	Tela inicial do site
+	<a href="./login.php">Login</a>
 </body>
 </html>
