@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Rocket Bread DElivery!</title>
+	<title>Rocket Bread Delivery!</title>
 </head>
 <body>
 	Tela inicial do site

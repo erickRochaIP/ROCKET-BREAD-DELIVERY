@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Produto View</title>
+	<title>Tela Inicial</title>
 </head>
 <body>
 <?php
