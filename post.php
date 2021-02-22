@@ -1,4 +1,5 @@
 <?php
+session_start();
 $classe = $_POST['class'];
 $metodo = $_POST['acao'];
 

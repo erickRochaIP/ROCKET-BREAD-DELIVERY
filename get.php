@@ -1,4 +1,5 @@
 <?php
+session_start();
 $classe = $_GET['class'];
 $metodo = $_GET['acao'];
 

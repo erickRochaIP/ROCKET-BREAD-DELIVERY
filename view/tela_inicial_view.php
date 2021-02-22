@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-	$usuario = $_REQUEST['usuario'];
+	$usuario = $_SESSION['usuario'];
 
 	echo "Logado como: ";
 	echo "<br>";
