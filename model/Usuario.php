@@ -39,7 +39,7 @@
 		}
 
 		public function login($nomeusuario, $senha){
-			require_once __DIR__ .'/../db_const.php';
+			require __DIR__ .'/../db_const.php';
     		$conec = new PDO($dsn, $user, $pass);
 	    	$sql = 'SELECT id, nomeusuario, senha, nivelacesso FROM usuario WHERE nomeusuario = "'.$nomeusuario.'" AND senha = "'.$senha.'";';
 	    	$stmt = $conec->prepare($sql);
@@ -60,6 +60,28 @@
 	    	$usuario->setNivelAcesso($row['nivelacesso']);
 
 	    	return $usuario;
+		}
+
+		public function cadastro($nomeusuario, $senha, $senhaconf){	#precisa adicionar nivel acesso
+			if (strcmp($senha, $senhaconf) != 0){
+				throw new Exception("Senhas estao diferentes");
+			}
+			require __DIR__.'/../db_const.php';
+			$conec = new PDO($dsn, $user, $pass);
+			$sql = 'SELECT nomeusuario FROM usuario WHERE nomeusuario = "'.$nomeusuario.'";';
+			$stmt = $conec->prepare($sql);
+			$stmt->setFetchMode(PDO::FETCH_ASSOC);
+			$stmt->execute();
+
+			if ($stmt->rowCount() != 0){
+				throw new Exception("Nome usuario ".$nomeusuario." ja esta em uso");
+			}
+
+			$sql = 'INSERT INTO usuario (nomeusuario, senha, nivelacesso) VALUES (?, ?, 1)';
+			$stmt = $conec->prepare($sql);
+			$stmt->execute([$nomeusuario, $senha]);
+
+			return $this->login($nomeusuario, $senha);
 		}
 	}
 ?>

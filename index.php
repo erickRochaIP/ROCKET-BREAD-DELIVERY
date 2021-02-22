@@ -6,5 +6,6 @@
 <body>
 	Tela inicial do site
 	<a href="./login.php">Login</a>
+	<a href="./cadastro.php">Cadastro</a>
 </body>
 </html>
