@@ -35,8 +35,8 @@ class ItemPedido {
 		$this->id_pedido = $id_pedido;
 	}
 
-	public function setQuantidade($id_quantidade){
-		$this->id_quantidade = $id_quantidade;
+	public function setQuantidade($quantidade){
+		$this->quantidade = $quantidade;
 	}
 }
 ?>
