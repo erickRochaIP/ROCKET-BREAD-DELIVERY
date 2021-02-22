@@ -18,6 +18,14 @@
 	echo "Ativo: ".$produto->getAtivo();
 	echo "<br>";
 ?>
-
+<form action="post.php" method="post">
+	<?php
+		echo '<input type="hidden" name="id_produto" value="'.$produto->getId().'">';
+	?>
+	<input type="number" name="quantidade" min="1">
+	<input type="hidden" name="class" value="Produto">
+	<input type="hidden" name="acao" value="getAllProdutoCarrinho">
+	<button>Adicionar</button>
+</form>
 </body>
 </html>
