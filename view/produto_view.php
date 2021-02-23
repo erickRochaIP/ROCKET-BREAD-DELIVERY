@@ -18,7 +18,7 @@
 	echo "Ativo: ".$produto->getAtivo();
 	echo "<br>";
 ?>
-<form action="post.php" method="post">
+<form action="get.php" method="get">
 	<?php
 		echo '<input type="hidden" name="id_produto" value="'.$produto->getId().'">';
 	?>
@@ -27,5 +27,11 @@
 	<input type="hidden" name="acao" value="getAllProdutoCarrinho">
 	<button>Adicionar</button>
 </form>
+<br>
+	<form action="get.php" method="get">
+		<input type="hidden" name="class" value="Produto">
+		<input type="hidden" name="acao" value="getAllProdutoCarrinho">
+		<button>Voltar</button>
+	</form>
 </body>
 </html>
