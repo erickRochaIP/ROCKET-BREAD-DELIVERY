@@ -18,7 +18,7 @@
 		}
 	?>
 
-	<form action="post.php" method="post">
+	<form action="get.php" method="get">
 		<input type="hidden" name="class" value="Produto">
 		<input type="hidden" name="acao" value="getAllProdutoCarrinho">
 		<button>Voltar</button>

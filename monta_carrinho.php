@@ -21,7 +21,7 @@ session_start();
 	?>
 
 	<div class="form-login">
-		<form action="post.php" method="post" id="formLogin">
+		<form action="get.php" method="get" id="formLogin">
 			<input type="hidden" name="class" value="Produto" />
 			<input type="hidden" name="acao" value="getAllProdutoCarrinho" />
 			<button class="botaoLogin">Montar</button>

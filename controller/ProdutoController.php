@@ -35,7 +35,7 @@ class ProdutoController {
 
 	public function getAllProdutoCarrinho($post){
 		$produto = new Produto();
-		if(isset($post['id_produto'])){
+		if(isset($post['id_produto']) && $post['quantidade'] >= 1){
 			if (!isset($_SESSION['carrinho'])){
 				$_SESSION['carrinho'] = array();
 			}

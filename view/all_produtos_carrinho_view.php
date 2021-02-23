@@ -9,7 +9,7 @@
 ?>
 <table>
 	<?php foreach($produtos as $produto): ?>
-	<form action="post.php" method="post">
+	<form action="get.php" method="get">
 		<?php
 			echo $produto->getNome();
 			echo '<input type="hidden" name="id" value="'.$produto->getId().'">';
@@ -21,13 +21,13 @@
 	</form>
 	<br>
 	<?php endforeach; ?>
-	<form action="post.php" method="post">
+	<form action="get.php" method="get">
 		<input type="hidden" name="class" value="Session">
 		<input type="hidden" name="acao" value="destroy_session">
 		<button>Destruir sessao</button>
 	</form>
 	<br>
-	<form action="post.php" method="post">
+	<form action="get.php" method="get">
 		<input type="hidden" name="class" value="ItemPedido">
 		<input type="hidden" name="acao" value="getCarrinho">
 		<button>Carrinho</button>
