@@ -44,5 +44,26 @@ class Pedido {
 		return $itens;
 
 	}
+
+	public function cadastro($id_cliente){
+		require __DIR__.'/../db_const.php';
+		$conec = new PDO($dsn, $user, $pass);
+		$insert = 'INSERT INTO pedido (id_cliente) VALUES (?)';
+		$stmt = $conec->prepare($insert);
+		$stmt->execute([$id_cliente]);
+
+		$this->setId($conec->lastInsertId());
+	}
+
+	public function cadastrarItens($carrinho){
+		require __DIR__.'/../db_const.php';
+		$conec = new PDO($dsn, $user, $pass);
+		$insert = 'INSERT INTO item_pedido (id_pedido, id_produto, quantidade) VALUES (?, ?, ?)';
+		$stmt = $conec->prepare($insert);
+
+		foreach($carrinho as $item){
+			$stmt->execute([$this->getId(), $item[0], $item[1]]);
+		}
+	}
 }
 ?>
