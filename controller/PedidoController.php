@@ -9,5 +9,9 @@ class PedidoController {
 
 		require __DIR__.'/../view/pedido_view.php';
 	}
+
+	public function realizar_pedido($post){
+		echo "cheguei ate aqui";
+	}
 }
 ?>

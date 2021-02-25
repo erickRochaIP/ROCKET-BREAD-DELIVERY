@@ -23,5 +23,11 @@
 		<input type="hidden" name="acao" value="getAllProdutoCarrinho">
 		<button>Voltar</button>
 	</form>
+
+	<form action="get.php" method="get">
+		<input type="hidden" name="class" value="Cliente">
+		<input type="hidden" name="acao" value="setCliente">
+		<button>Comprar</button>
+	</form>
 </body>
 </html>
