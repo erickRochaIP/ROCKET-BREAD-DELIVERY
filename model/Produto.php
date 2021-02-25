@@ -58,8 +58,9 @@ class Produto {
 	public function getProdutoById($id){
 		require_once __DIR__ .'/../db_const.php';
     	$conec = new PDO($dsn, $user, $pass);
-    	$sql = 'SELECT id, nome, descricao, preco, ativo FROM produto WHERE id = '.$id.';';
+    	$sql = 'SELECT id, nome, descricao, preco, ativo FROM produto WHERE id = :id;';
     	$stmt = $conec->prepare($sql);
+    	$stmt->bindValue(':id', $id);
     	$stmt->setFetchMode(PDO::FETCH_ASSOC);
     	$stmt->execute();
     	while ($row = $stmt->fetch())

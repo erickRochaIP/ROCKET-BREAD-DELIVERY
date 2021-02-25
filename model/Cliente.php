@@ -32,8 +32,9 @@ class Cliente {
 	public function cadastro($id_endereco){
 		require __DIR__.'/../db_const.php';
 		$conec = new PDO($dsn, $user, $pass);
-		$sql = 'SELECT id FROM cliente WHERE id_endereco = "'.$id_endereco.'";';
+		$sql = 'SELECT id FROM cliente WHERE id_endereco = :id_endereco;';
 		$stmt = $conec->prepare($sql);
+		$stmt->bindValue(':id_endereco', $id_endereco);
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
 

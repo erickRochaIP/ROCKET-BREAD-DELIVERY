@@ -41,8 +41,10 @@
 		public function login($nomeusuario, $senha){
 			require __DIR__ .'/../db_const.php';
     		$conec = new PDO($dsn, $user, $pass);
-	    	$sql = 'SELECT id, nomeusuario, senha, nivelacesso FROM usuario WHERE nomeusuario = "'.$nomeusuario.'" AND senha = "'.$senha.'";';
+	    	$sql = 'SELECT id, nomeusuario, senha, nivelacesso FROM usuario WHERE nomeusuario =:nomeusuario AND senha = :senha;';
 	    	$stmt = $conec->prepare($sql);
+	    	$stmt->bindValue(':nomeusuario', $nomeusuario);
+	    	$stmt->bindValue(':senha', $senha);
 	    	$stmt->setFetchMode(PDO::FETCH_ASSOC);
 	    	$stmt->execute();
 
@@ -68,8 +70,9 @@
 			}
 			require __DIR__.'/../db_const.php';
 			$conec = new PDO($dsn, $user, $pass);
-			$sql = 'SELECT nomeusuario FROM usuario WHERE nomeusuario = "'.$nomeusuario.'";';
+			$sql = 'SELECT nomeusuario FROM usuario WHERE nomeusuario = :nomeusuario;';
 			$stmt = $conec->prepare($sql);
+			$stmt->bindValue(':nomeusuario', $nomeusuario);
 			$stmt->setFetchMode(PDO::FETCH_ASSOC);
 			$stmt->execute();
 

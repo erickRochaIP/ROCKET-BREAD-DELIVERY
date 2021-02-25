@@ -50,8 +50,10 @@ class Endereco {
 	public function cadastro($rua, $bairro, $numero, $cidade){
 		require __DIR__.'/../db_const.php';
 			$conec = new PDO($dsn, $user, $pass);
-		$sql = 'SELECT id FROM endereco WHERE rua = "'.$rua.'" AND numero = "'.$numero.'";';
+		$sql = 'SELECT id FROM endereco WHERE rua = :rua AND numero = :numero;';
 		$stmt = $conec->prepare($sql);
+		$stmt->bindValue(':rua', $rua, PDO::PARAM_STR);
+		$stmt->bindValue(':numero', $numero, PDO::PARAM_INT);
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
 
@@ -64,6 +66,8 @@ class Endereco {
 			$stmt->execute([$rua, $bairro, $numero, $cidade]);
 
 			$stmt = $conec->prepare($sql);
+			$stmt->bindValue(':rua', $rua);
+			$stmt->bindValue(':numero', $numero);
 			$stmt->setFetchMode(PDO::FETCH_ASSOC);
 			$stmt->execute();
 			$row = $stmt->fetch();
