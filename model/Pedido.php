@@ -53,6 +53,10 @@ class Pedido {
 		$stmt->execute([$id_cliente]);
 
 		$this->setId($conec->lastInsertId());
+
+		require __DIR__.'/Registro.php';
+		$registro = new Registro();
+		$registro->registrar($this->getId());
 	}
 
 	public function cadastrarItens($carrinho){

@@ -47,5 +47,13 @@ class Registro {
 	public function setSituacao($situacao){
 		$this->situacao = $situacao;
 	}
+
+	public function registrar($id_pedido){
+		require __DIR__.'/../db_const.php';
+		$conec = new PDO($dsn, $user, $pass);
+		$insert = 'INSERT INTO registro (id_pedido, hora, data, situacao) VALUES (?, CURTIME(), CURDATE(), 1)';
+		$stmt = $conec->prepare($insert);
+		$stmt->execute([$id_pedido]);
+	}
 }
 ?>
