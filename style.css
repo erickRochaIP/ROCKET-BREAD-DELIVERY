@@ -1,6 +1,12 @@
+
+body {
+    text-align: center;
+}
+
 .topo{
   overflow: hidden;
   background-color: #cb6d45;
+  color: #FFE7D4;
   padding: 10px 10px;
 }
 
@@ -18,3 +24,4 @@
 .form-login button{
 	margin: 10px;
 }
+

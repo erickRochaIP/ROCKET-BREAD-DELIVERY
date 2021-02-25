@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Rocket Bread Delivery!</title>
+    <title>Rocket Bread Delivery!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">       
 </head>
+
 <body>
-	Tela inicial do site
-	<a href="./login.php">Login</a>
-	<br>
-	<a href="./cadastro.php">Cadastro</a>
-	<br>
-	<a href="./busca_pedido.php">Busca Pedido</a>
-	<br>
-	<a href="./monta_carrinho.php">Monta Carrinho</a>
+
+<?php 
+   include('./navbar.html')
+?>
+
+    <a href="./busca_pedido.php">Busca Pedido</a>
+    <br>
+    <a href="./monta_carrinho.php">Monta Carrinho</a>
 </body>
 </html>
