@@ -34,7 +34,7 @@ class Cliente {
 		$conec = new PDO($dsn, $user, $pass);
 		$sql = 'SELECT id FROM cliente WHERE id_endereco = :id_endereco;';
 		$stmt = $conec->prepare($sql);
-		$stmt->bindValue(':id_endereco', $id_endereco);
+		$stmt->bindValue(':id_endereco', $id_endereco, PDO::PARAM_INT);
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
 
@@ -47,6 +47,7 @@ class Cliente {
 			$stmt->execute([$id_endereco]);
 
 			$stmt = $conec->prepare($sql);
+			$stmt->bindValue(':id_endereco', $id_endereco, PDO::PARAM_INT);
 			$stmt->setFetchMode(PDO::FETCH_ASSOC);
 			$stmt->execute();
 			$row = $stmt->fetch();
