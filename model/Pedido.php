@@ -21,6 +21,26 @@ class Pedido {
 		$this->id_cliente = $id_cliente;
 	}
 
+	public function getAllPedidos(){
+		require __DIR__.'/../db_const.php';
+		$conec = new PDO($dsn, $user, $pass);
+		$sql = 'SELECT id, id_cliente FROM pedido';
+		$stmt = $conec->prepare($sql);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+		$pedidos = array();
+		require __DIR__.'/ItemPedido.php';
+		while ($row = $stmt->fetch()){
+			$pedido = new Pedido();
+			$pedido->setId($row['id']);
+			$pedido->setIdCliente($row['id_cliente']);
+
+			$pedidos[] = $pedido;
+		}
+
+		return $pedidos;	
+	}
+
 	public function getItensPedidos($id_pedido){
 		require __DIR__.'/../db_const.php';
 		$conec = new PDO($dsn, $user, $pass);

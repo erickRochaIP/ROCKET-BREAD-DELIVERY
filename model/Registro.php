@@ -48,6 +48,27 @@ class Registro {
 		$this->situacao = $situacao;
 	}
 
+	public function getRegistroByIdPedido($id_pedido){
+		require __DIR__.'/../db_const.php';
+		$conec = new PDO($dsn, $user, $pass);
+		$sql = 'SELECT id, id_pedido, hora, data, situacao FROM registro WHERE id_pedido = :id_pedido ORDER BY id DESC LIMIT 1';
+		$stmt = $conec->prepare($sql);
+		$stmt->bindValue('id_pedido', $id_pedido);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+
+		$row = $stmt->fetch();
+
+		$registro = new Registro();
+		$registro->setId($row['id']);
+		$registro->setIdPedido($row['id_pedido']);
+		$registro->setData($row['data']);
+		$registro->setHora($row['hora']);
+		$registro->setSituacao($row['situacao']);
+
+		return $registro;
+	}
+
 	public function registrar($id_pedido){
 		require __DIR__.'/../db_const.php';
 		$conec = new PDO($dsn, $user, $pass);
