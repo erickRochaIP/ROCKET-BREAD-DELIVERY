@@ -1,13 +1,18 @@
 <?php
 	if(isset($_REQUEST['itensCarrinho'])){
 		echo "Carrinho <br>";
+		$total = 0;
 		foreach ($_REQUEST['itensCarrinho'] as $item) {
 			echo $item[0]." ";
 			echo $item[1]." ";
 			echo $item[2]." ";
 			echo $item[3]." ";
 			echo "<br>";
+
+			$total += $item[3];
 		}
+
+		echo 'Total: '.$total.'<br>';
 	}else{
 		echo "Carrinho vazio";
 		echo "<br>";
