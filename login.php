@@ -18,7 +18,7 @@
 	?>
 
 	<div class="form-login">
-		<form action="post.php" method="post" id="formLogin">
+		<form action="index.php" method="post" id="formLogin">
 			<input type="text" name="username" placeholder="username">
 			<br>
 			<input type="password" name="password" placeholder="password">

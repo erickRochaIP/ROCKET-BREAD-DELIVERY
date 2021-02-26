@@ -21,7 +21,7 @@
 	?>
 
 	<div class="form-login">
-		<form action="get.php" method="get" id="formLogin">
+		<form action="index.php" method="get" id="formLogin">
 			<input type="hidden" name="class" value="Produto" />
 			<input type="hidden" name="acao" value="getAllProdutoCarrinho" />
 			<button class="botaoLogin">Montar</button>

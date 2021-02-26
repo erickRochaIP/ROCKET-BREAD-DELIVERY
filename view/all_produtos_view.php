@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>All Produtos View</title>
-</head>
-<body>
 <?php
 	$produtos = $_REQUEST['produtos'];
 ?>
@@ -25,5 +19,3 @@
 	</tr>
 	<?php endforeach; ?>
 </table>
-</body>
-</html>

@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tela Inicial</title>
-</head>
-<body>
+
 <?php
 	$usuario = $_SESSION['usuario'];
 
@@ -18,5 +13,3 @@
 	echo "<br>";
 ?>
 
-</body>
-</html>

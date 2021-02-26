@@ -15,7 +15,7 @@ session_start();
 		</div>
 	</div>
 	<div class="form-login">
-		<form action="get.php" method="get" id="formLogin">
+		<form action="index.php" method="get" id="formLogin">
 			<input type="text" name="id" placeholder="id do pedido">
 			<br>
 			<input type="hidden" name="class" value="Pedido" />
