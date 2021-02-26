@@ -12,8 +12,32 @@
    include('./navbar.html')
 ?>
 
-    <a href="./busca_pedido.php">Busca Pedido</a>
-    <br>
-    <a href="./monta_carrinho.php">Monta Carrinho</a>
+<?php
+	session_start();
+
+	if(isset($_POST['class']) && isset($_POST['acao'])){
+		$classe = $_POST['class'];
+		$metodo = $_POST['acao'];
+
+		$classe .= 'Controller';
+
+		require_once __DIR__ .'/controller/'.$classe.'.php';
+
+		$obj = new $classe();
+		$obj->$metodo($_POST);
+	} else if(isset($_GET['class']) && isset($_GET['acao'])) {
+		$classe = $_GET['class'];
+		$metodo = $_GET['acao'];
+
+		$classe .= 'Controller';
+
+		require_once __DIR__ .'/controller/'.$classe.'.php';
+
+		$obj = new $classe();
+		$obj->$metodo($_GET);
+	} else {
+		require_once __DIR__.'/view/index.php';
+	}
+?>
 </body>
 </html>
