@@ -36,7 +36,9 @@
 		$obj = new $classe();
 		$obj->$metodo($_GET);
 	} else {
-		require_once __DIR__.'/view/index.php';
+		require_once __DIR__.'/controller/ProdutoController.php';
+		$obj = new ProdutoController();
+		$obj->getAllProdutoCarrinho(0);
 	}
 ?>
 </body>

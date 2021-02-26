@@ -2,6 +2,7 @@
 require_once __DIR__ .'/../model/Produto.php';
 
 class ProdutoController {
+
 	public function getProdutoId($post) {
 		$produto = new Produto();
 

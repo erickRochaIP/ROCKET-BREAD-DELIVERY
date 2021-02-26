@@ -38,7 +38,7 @@ class PedidoController {
 			require_once __DIR__.'/../error.php';
 		}
 
-		echo "Deu tudo certo";
+		require_once __DIR__.'/../view/compra_realizada_view.php';
 
 
 	}

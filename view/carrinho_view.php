@@ -1,9 +1,11 @@
 <?php
-	if(isset($_SESSION['carrinho'])){
+	if(isset($_REQUEST['itensCarrinho'])){
 		echo "Carrinho <br>";
-		foreach ($_SESSION['carrinho'] as $item) {
+		foreach ($_REQUEST['itensCarrinho'] as $item) {
 			echo $item[0]." ";
-			echo $item[1];
+			echo $item[1]." ";
+			echo $item[2]." ";
+			echo $item[3]." ";
 			echo "<br>";
 		}
 	}else{
