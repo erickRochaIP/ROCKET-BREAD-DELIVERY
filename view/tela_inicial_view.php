@@ -13,3 +13,9 @@
 	echo "<br>";
 ?>
 
+<?php
+	foreach ($_REQUEST['pedidos'] as $pedido) {
+		echo 'Id Pedido: '.$pedido[0]->getId().' / Situacao: '.$pedido[1]->getSituacao().'<br>';
+	}
+?>
+

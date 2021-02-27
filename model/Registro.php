@@ -57,6 +57,13 @@ class Registro {
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
 
+		if ($stmt->rowCount() != 1){
+			$registro = new Registro();
+			$registro->setSituacao(999);
+
+			return $registro;
+		}
+
 		$row = $stmt->fetch();
 
 		$registro = new Registro();
