@@ -2,6 +2,11 @@
 	require_once __DIR__ .'/../model/Usuario.php';
 
 	class UsuarioController{
+
+		public function getTelaLogin($post){
+			require __DIR__.'/../view/login_view.php';
+		}
+
 		public function login($post){
 			$usuario = new Usuario();
 			try{
@@ -14,25 +19,28 @@
 
 			}catch(Exception $e){
 				$_REQUEST['mensagem'] = "Nome de Usuario ou Senha incorretos";
-				require_once __DIR__.'/../login.php';
+				require __DIR__.'/../view/login_view.php';
 				return;
 			}
 
-			require_once __DIR__ .'/PedidoController.php';
+			require __DIR__ .'/PedidoController.php';
 			$pdControl = new PedidoController();
 			$pdControl->getTelaInicial($post);
 
+		}
+
+		public function getTelaCadastro($post){
+			require __DIR__.'/../view/cadastro_view.php';
 		}
 
 		public function cadastro($post){
 			$usuario = new Usuario();
 			try{
 				$usuario = $usuario->cadastro($post['username'], $post['password'], $post['passwordconf']);
-				$_SESSION['usuario'] = $usuario;
-				require_once __DIR__.'/../view/tela_inicial_view.php';
+				$this->login($post);
 			}catch(Exception $e){
 				$_REQUEST['mensagem'] = $e->getMessage();
-				require_once __DIR__.'/../cadastro.php';
+				require_once __DIR__.'/../view/cadastro_view.php';
 			}
 		}
 	}
