@@ -4,17 +4,17 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-6-md">
-            <!-- Imagem -->
+        <div class="col-md-6">
+        <img class="img-fluid" style="width: 100%; height:100%" src="<?php echo 'images/'.$produto->getId().'.jpg'; ?>" alt="Imagem do produto">
         </div>
-        <div class="col-6-md">
-            <div class="col-12-md">
+        <div class="col-md-6">
+            <div class="col-md-12">
                 <h1>
                <?php echo $produto->getNome() ?>
                 </h1>
             </div>
 
-            <div class="col-12-md">
+            <div class="col-md-12">
                <span class="label label-primary">
                 <!-- Tags -->
                </span>
@@ -23,13 +23,13 @@
                </span>
             </div>
             
-            <div class="col-12-md">
+            <div class="col-md-12">
                <p class="description">
                <?php echo $produto->getDescricao() ?>
                </p>
             </div>
 
-            <div class="col-12-md">
+            <div class="col-md-12">
                <h2 class="product-price">
                <?php echo "R$ " . $produto->getPreco() ?>
                </h2>
