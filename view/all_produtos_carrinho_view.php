@@ -1,13 +1,14 @@
 
 <?php
 	$produtos = $_REQUEST['produtos'];
+    $emlinha = 3
 ?>
 
     <?php $i = -1 ?>
 	<?php foreach($produtos as $produto): ?>
 
     <?php $i++; ?>
-    <?php if($i%3 == 0): // Se for primeiro, o quarto, o sétimo, o décimo...?>
+    <?php if($i%$emlinha == 0): // Se for primeiro, o quarto, o sétimo, o décimo... (no caso de tres)?>
         <?php if($i != 0): // Se não for o primeiro ?>
             </div>
         <?php endif; ?>
@@ -34,6 +35,15 @@
       </div>
     </div>
 	<?php endforeach; ?>
+    <?php
+        if ($i+1%$emlinha != 0){ // Se acabou sem ter preenchido três
+            $i++;
+            while ($i%$emlinha != 0){
+                echo '<div class="card border-0"></div>'; // Preenche com um item vazio
+                $i++;
+            }
+        }
+        ?>
     </div> <! -- Fechar card-deck -->
 
 	<form class="mt-5" action="index.php" method="get">
