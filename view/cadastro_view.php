@@ -1,9 +1,3 @@
-<?php
-if (isset($_REQUEST['mensagem'])){
-	echo $_REQUEST['mensagem'];
-}
-?>
-
 <div class="form-login">
 	<form action="index.php" method="post" id="formLogin">
 		<input type="text" name="username" placeholder="username">

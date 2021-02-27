@@ -44,6 +44,11 @@
 		$obj->getAllProdutoCarrinho(0);
 	}
 ?>
+<?php 
+if(isset($_REQUEST['mensagem'])){ 
+    require_once('./error.php');
+}
+?>
 </div>
 
 <?php 
