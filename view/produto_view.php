@@ -49,6 +49,9 @@
                 </button>
             </div>
             <div class="col-md-4">
+                    <?php
+		            echo '<input type="hidden" name="id_produto" value="'.$produto->getId().'">';
+                    ?>
                     <input type="hidden" name="class" value="Produto">
                     <input type="hidden" name="acao" value="getAllProdutoCarrinho">
                      <button class="btn btn-lg btn-brand btn-full-width">
