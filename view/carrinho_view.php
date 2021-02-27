@@ -5,33 +5,45 @@
             <h1> Seu carrinho de compras </h1>
         </div>
         <div class="p-4 col-md-7 col-sm-12 itensCarrinho">
-            <div class="row">
-                <div class="caption col-md-2">
-                   <span> Quantia </span>
-                </div>
-                <div class="caption col-md-8 text-left">
-                   <span> Item </span>
-                </div>
-                <div class="caption col-md-2 text-right">
-                   <span> Preço </span>
-                </div>
-            </div>
-            <?php foreach($_REQUEST['itensCarrinho'] as $item): ?>
-            <div class="mt-2 pt-3 pb-2 row itemCarrinho">
-                <div class="quantia-carr col-md-2 text-center">
-                    <span> <?php echo $item[2]; ?> </span>
-                </div>
-                <div class="nome-item-carr col-md-7 text-left">
-                    <span> <?php echo $item[0]; ?> </span>
-                </div>
-                <div class="preco-carr col-md-3 text-right">
-                    <span>R$ <?php echo $item[1]; ?> </span>
+            <?php
+            if (isset($_REQUEST['itensCarrinho'])){
+            ?>
+                <div class="row">
+                    <div class="caption col-md-2">
+                       <span> Quantia </span>
+                    </div>
+                    <div class="caption col-md-8 text-left">
+                       <span> Item </span>
+                    </div>
+                    <div class="caption col-md-2 text-right">
+                       <span> Preço </span>
+                    </div>
                 </div>
                 <?php 
-                    $total += $item[3]
-                ?>
-            </div>
-            <?php endforeach ?>
+                foreach($_REQUEST['itensCarrinho'] as $item): ?>
+                    <div class="mt-2 pt-3 pb-2 row itemCarrinho">
+                        <div class="quantia-carr col-md-2 text-center">
+                            <span> <?php echo $item[2]; ?> </span>
+                        </div>
+                        <div class="nome-item-carr col-md-7 text-left">
+                            <span> <?php echo $item[0]; ?> </span>
+                        </div>
+                        <div class="preco-carr col-md-3 text-right">
+                            <span>R$ <?php echo $item[1]; ?> </span>
+                        </div>
+                        <?php 
+                            $total += $item[3]
+                        ?>
+                    </div>
+                <?php
+                endforeach; 
+            }else{
+            ?>
+                <div class="caption col-md-6">
+                    <span> Carrinho Vazio </span>
+                </div>
+            <?php
+            }?>
 
             <div class="mt-5 row">
                 <div class=" col-md-6">
