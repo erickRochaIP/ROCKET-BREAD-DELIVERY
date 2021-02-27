@@ -15,7 +15,7 @@
     <?php endif; ?>
 
     <div class="card" style="background-color: #FFF6F1">
-      <img class="card-img-top" src="<?php echo 'images/'.$produto->getId().'.jpg'; ?>" alt="Imagem do produto">
+      <img class="card-img-top" style="height:250px" src="<?php echo 'images/'.$produto->getId().'.jpg'; ?>" alt="Imagem do produto">
       <div class="card-body">
         <?php
         echo "<h4 class='card-title'>".$produto->getNome()."</h4>";
