@@ -29,6 +29,14 @@
 
 		}
 
+		public function logout($post){
+			unset($_SESSION['usuario']);
+
+			require __DIR__.'/ProdutoController.php';
+			$prodControl = new ProdutoController();
+			$prodControl->getAllProdutoCarrinho($post);
+		}
+
 		public function getTelaCadastro($post){
 			require __DIR__.'/../view/cadastro_view.php';
 		}

@@ -9,11 +9,11 @@
 <body>
 
 <?php 
-   include('./navbar.html')
+	session_start();
+	include('./navbar.html')
 ?>
 
 <?php
-	session_start();
 
 	if(isset($_POST['class']) && isset($_POST['acao'])){
 		$classe = $_POST['class'];

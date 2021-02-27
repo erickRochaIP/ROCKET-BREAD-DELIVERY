@@ -1,5 +1,19 @@
 <nav class="navbar justify-content-between topo">
   <a class="navbar-brand topo" href="index.php">Rocket Bread Delivery</a>
+
+
+<?php
+if (isset($_SESSION['usuario'])){
+?>
+    <form class="form-inline topo" action="index.php" method="get">
+    	<input type="hidden" name="class" value="Usuario">
+    	<input type="hidden" name="acao" value="logout">
+        <button class="btn btn-primary my-sm-0">Logout</button>
+    </form>
+
+<?php 
+}else{
+?>
     <form class="form-inline topo" action="index.php" method="get">
     	<input type="hidden" name="class" value="Usuario">
     	<input type="hidden" name="acao" value="getTelaLogin">
@@ -10,4 +24,7 @@
     	<input type="hidden" name="acao" value="getTelaCadastro">
         <button class="btn btn-success my-sm-0 ml-3">Cadastrar</button>
     </form>
+<?php
+}
+?>
 </nav>
