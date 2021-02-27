@@ -7,6 +7,10 @@ class PedidoController {
 
 		$_REQUEST['itens'] = $pedido->getItensPedidos($post['id']);
 
+		require __DIR__ .'/../model/Registro.php'; 
+		$registro = new Registro();
+		$_REQUEST['registro'] = $registro->getRegistroByIdPedido($post['id']);
+
 		require __DIR__.'/../view/pedido_view.php';
 	}
 

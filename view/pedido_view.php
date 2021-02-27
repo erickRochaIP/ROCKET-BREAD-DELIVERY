@@ -1,5 +1,6 @@
 	<?php
 		$itens = $_REQUEST['itens'];
+		$registro = $_REQUEST['registro'];
 	?>
 	<table>
 		<tr>
@@ -17,6 +18,12 @@
 		</tr>
 		<?php endforeach; ?>
 	</table>
+	<br>
+
+	<?php 
+		echo 'Situacao: '.$registro->getSituacao();
+	?>
+	<br>
 
 	<form action="index.php" method="get">
 		<input type="hidden" name="class" value="Pedido">
