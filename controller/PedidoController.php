@@ -10,6 +10,28 @@ class PedidoController {
 		require __DIR__.'/../view/pedido_view.php';
 	}
 
+	public function getTelaInicial($post){
+		$_REQUEST['pedidos'] = array();
+
+		$pedido = new Pedido();
+		$pedidos = $pedido->getAllPedidos();
+
+		require __DIR__ .'/../model/Registro.php';
+
+		foreach ($pedidos as $ped) {
+			$registro = new Registro();
+			$reg = $registro->getRegistroByIdPedido($ped->getId());
+
+			$row = array();
+			$row[] = $ped;
+			$row[] = $reg;
+
+			$_REQUEST['pedidos'][] = $row;
+		}
+
+		require_once __DIR__ .'/../view/tela_inicial_view.php';
+	}
+
 	public function realizar_pedido($post){
 		require_once __DIR__ .'/../model/Endereco.php';
 		$endereco = new Endereco();
