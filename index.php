@@ -10,7 +10,6 @@
 
 <?php 
 	session_start();
-	include('./navbar.html')
 ?>
 
 <?php
@@ -40,6 +39,10 @@
 		$obj = new ProdutoController();
 		$obj->getAllProdutoCarrinho(0);
 	}
+?>
+
+<?php 
+	include('./navbar.html');
 ?>
 </body>
 </html>
