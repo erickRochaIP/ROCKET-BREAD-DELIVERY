@@ -43,7 +43,7 @@
                 <button onclick="updateCarrinho(-1)" type="button" id="adcCarrinho" class="btn btn-default btn-lg btn-compra">
                     <i class="fa fa-minus"></i>
                 </button>
-                <input id="qntCarrinho" name="quantidade" class="btn btn-default btn-lg btn-compra" value="1" />
+                <input id="qntCarrinho" name="quantidade" class="btn btn-default btn-lg btn-compra-valor" value="1" />
                 <button onclick="updateCarrinho(1)"type="button" id="subCarrinho" class="btn btn-default btn-lg btn-compra">
                     <i class="fa fa-plus"></i>
                 </button>

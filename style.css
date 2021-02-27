@@ -41,6 +41,10 @@ body {
   width: 52px;
   height: 46px;
 }
+.btn-compra-valor {
+  width: 60px;
+  height: 46px;
+}
 
 .itensCarrinho{
     background-color: #FFE7D4;
