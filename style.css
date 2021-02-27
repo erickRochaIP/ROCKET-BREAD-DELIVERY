@@ -11,7 +11,7 @@ body {
     margin: 1em auto;
     max-width: 60em;
     padding: 0 .62em;
-    font: 1.2em/1.62 sans-serif;
+    font: 1.2em/1.62 Arial;
     color: #454545;
 }
 
@@ -41,3 +41,50 @@ body {
   width: 52px;
   height: 46px;
 }
+
+.itensCarrinho{
+    background-color: #FFE7D4;
+}
+
+.itemCarrinho{
+    background-color: #FFF5EC;
+}
+
+.nome-item-carr{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.quantia-carr{
+    color: #2F4858;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.preco-carr{
+    color: #B78570;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.caption {
+    font-weight: bold;
+    color: #2F4858;
+}
+
+.total-carr{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.preco-total-carr{
+    color: #B78570;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #FFE7D4;
+    text-shadow: 1px 0 #888888;
+    letter-spacing:1px;
+}
+
