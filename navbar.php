@@ -5,7 +5,7 @@
 <?php
 if (isset($_SESSION['usuario'])){
 ?>
-    <form class="form-inline topo" action="index.php" method="get">
+    <form class="form-inline" action="index.php" method="get">
     	<input type="hidden" name="class" value="Usuario">
     	<input type="hidden" name="acao" value="logout">
         <button class="btn btn-primary my-sm-0">Logout</button>
@@ -14,16 +14,18 @@ if (isset($_SESSION['usuario'])){
 <?php 
 }else{
 ?>
-    <form class="form-inline topo" action="index.php" method="get">
+    <div class="form-inline">
+    <form action="index.php" method="get">
     	<input type="hidden" name="class" value="Usuario">
     	<input type="hidden" name="acao" value="getTelaLogin">
         <button class="btn btn-primary my-sm-0">Login</button>
     </form>
-    <form class="form-inline topo">
+    <form action="index.php" method="get">
     	<input type="hidden" name="class" value="Usuario">
     	<input type="hidden" name="acao" value="getTelaCadastro">
         <button class="btn btn-success my-sm-0 ml-3">Cadastrar</button>
     </form>
+    </div>
 <?php
 }
 ?>
