@@ -76,12 +76,12 @@ class Registro {
 		return $registro;
 	}
 
-	public function registrar($id_pedido){
+	public function registrar($id_pedido, $situacao){
 		require __DIR__.'/../db_const.php';
 		$conec = new PDO($dsn, $user, $pass);
-		$insert = 'INSERT INTO registro (id_pedido, hora, data, situacao) VALUES (?, CURTIME(), CURDATE(), 1)';
+		$insert = 'INSERT INTO registro (id_pedido, hora, data, situacao) VALUES (?, CURTIME(), CURDATE(), ?)';
 		$stmt = $conec->prepare($insert);
-		$stmt->execute([$id_pedido]);
+		$stmt->execute([$id_pedido, $situacao]);
 	}
 }
 ?>

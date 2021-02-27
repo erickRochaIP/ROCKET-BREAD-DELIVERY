@@ -11,6 +11,8 @@ class PedidoController {
 		$registro = new Registro();
 		$_REQUEST['registro'] = $registro->getRegistroByIdPedido($post['id']);
 
+		$_REQUEST['id_pedido'] = $post['id'];
+
 		require __DIR__.'/../view/pedido_view.php';
 	}
 

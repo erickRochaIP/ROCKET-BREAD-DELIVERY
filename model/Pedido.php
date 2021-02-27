@@ -76,7 +76,7 @@ class Pedido {
 
 		require __DIR__.'/Registro.php';
 		$registro = new Registro();
-		$registro->registrar($this->getId());
+		$registro->registrar($this->getId(), 1);
 	}
 
 	public function cadastrarItens($carrinho){
