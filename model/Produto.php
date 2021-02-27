@@ -81,6 +81,8 @@ class Produto {
     	$sql = 'INSERT INTO produto(nome, descricao, preco, ativo) VALUES(?, ?, ?, ?)';
     	$stmt = $conec->prepare($sql);
     	$stmt->execute([$this->nome, $this->descricao, $this->preco, $this->ativo]);
+
+    	$this->setId($conec->lastInsertId());
     	
     	return $stmt;
 	}

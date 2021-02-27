@@ -11,18 +11,29 @@ class ProdutoController {
 		require_once __DIR__ .'/../view/produto_view.php';
 	}
 
-	public function saveProduto($post) {
+	public function saveProduto($post, $files) {
 		$produto = new Produto();
 
-		$produto->setProduto($get['nome'], $post['descricao'], $post['preco'], $post['ativo']);
+		$produto->setProduto($post['nome'], $post['descricao'], $post['preco'], $post['ativo']);
 		$result = $produto->saveProduto();
 
 		if ($result){
+			$info = pathinfo($files['img']['name']);
+			$ext = $info['extension'];
+			$newname = $produto->getId().'.'.$ext;
+
+			$target = __DIR__.'/../images/'.$newname;
+			move_uploaded_file($files['img']['tmp_name'], $target);
+
 			echo "Produto salvo: ".$post['nome']." ".$post['descricao']." ".$post['preco']." ".$post['ativo'];			
 		}else{
 			echo "Problemas na insercao";
 		}
 
+	}
+
+	public function cadastrarProduto(){
+		require_once __DIR__ .'/../view/cadastra_produto_view.php';
 	}
 
 	public function getAllProduto($post) {

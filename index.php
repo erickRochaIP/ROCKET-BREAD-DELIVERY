@@ -27,7 +27,11 @@
 		require_once __DIR__ .'/controller/'.$classe.'.php';
 
 		$obj = new $classe();
-		$obj->$metodo($_POST);
+		if(isset($_FILES['img'])){
+			$obj->$metodo($_POST, $_FILES);
+		}else{
+			$obj->$metodo($_POST);
+		}
 	} else if(isset($_GET['class']) && isset($_GET['acao'])) {
 		$classe = $_GET['class'];
 		$metodo = $_GET['acao'];
