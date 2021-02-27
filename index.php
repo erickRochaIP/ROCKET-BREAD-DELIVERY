@@ -12,6 +12,7 @@
 	session_start();
 ?>
 
+<div class="conteudo">
 <?php
 
 	if(isset($_POST['class']) && isset($_POST['acao'])){
@@ -44,5 +45,6 @@
 <?php 
 	include('./navbar.html');
 ?>
+</div>
 </body>
 </html>
