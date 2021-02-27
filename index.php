@@ -44,10 +44,10 @@
 		$obj->getAllProdutoCarrinho(0);
 	}
 ?>
+</div>
 
 <?php 
-	include('./navbar.html');
+	require_once('./navbar.php');
 ?>
-</div>
 </body>
 </html>

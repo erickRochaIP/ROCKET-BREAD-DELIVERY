@@ -8,3 +8,16 @@ function updateCarrinho(v){
     }
 }
 
+// Coloca a navbar antes do do div de classe conteudo
+function navbarPraCima(){
+    let navs = document.getElementsByTagName('nav');
+    let bodies = document.getElementsByTagName('body');
+    var contents = document.getElementsByClassName('conteudo');
+
+    bodies[0].insertBefore(navs[0], contents[0])
+}
+
+// Fazer coisas quando a página termianr de carregar
+window.addEventListener('load', (event) => {
+    navbarPraCima()
+});
