@@ -46,6 +46,7 @@ class PedidoController {
 		}catch(Exception $e){
 			$_REQUEST['mensagem'] = $e->getMessage();
 			require_once __DIR__.'/../error.php';
+			return;
 		}
 
 		require_once __DIR__ .'/../model/Cliente.php';
@@ -55,6 +56,7 @@ class PedidoController {
 		}catch(Exception $e){
 			$_REQUEST['mensagem'] = $e->getMessage();
 			require_once __DIR__.'/../error.php';
+			return;
 		}
 
 		$pedido = new Pedido();
@@ -64,7 +66,10 @@ class PedidoController {
 		}catch(Exception $e){
 			$_REQUEST['mensagem'] = $e->getMessage();
 			require_once __DIR__.'/../error.php';
+			return;
 		}
+
+		unset($_SESSION['carrinho']);
 
 		require_once __DIR__.'/../view/compra_realizada_view.php';
 
