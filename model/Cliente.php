@@ -29,6 +29,26 @@ class Cliente {
 		$this->celular = $celular;
 	}
 
+	public function getAllClientes(){
+		require __DIR__.'/../db_const.php';
+		$conec = new PDO($dsn, $user, $pass);
+		$sql = 'SELECT id, id_endereco FROM cliente';
+		$stmt = $conec->prepare($sql);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+
+		$clientes = array();
+		while ($row = $stmt->fetch()){
+			$cliente = new Cliente();
+			$cliente->setId($row['id']);
+			$cliente->setIdEndereco($row['id_endereco']);
+
+			$clientes[] = $cliente;
+		}
+
+		return $clientes;	
+	}
+
 	public function cadastro($id_endereco){
 		require __DIR__.'/../db_const.php';
 		$conec = new PDO($dsn, $user, $pass);

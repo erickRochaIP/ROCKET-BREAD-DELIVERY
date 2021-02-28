@@ -59,5 +59,5 @@
 	<form action="index.php" method="get">
 		<input type="hidden" name="class" value="Pedido">
 		<input type="hidden" name="acao" value="getTelaInicial">
-		<button>Voltar</button>
+		<button>Tela inicial</button>
 	</form>

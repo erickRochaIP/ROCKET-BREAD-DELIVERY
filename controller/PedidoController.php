@@ -16,6 +16,25 @@ class PedidoController {
 		require __DIR__.'/../view/pedido_view.php';
 	}
 
+	public function getPedidosCliente($post){
+		$_REQUEST['pedidos'] = array();
+
+		$pedido = new Pedido();
+		$pedidos = $pedido->getAllPedidosCliente($post['id_cliente']);
+		require __DIR__ .'/../model/Registro.php';
+		foreach ($pedidos as $ped) {
+			$registro = new Registro();
+			$reg = $registro->getRegistroByIdPedido($ped->getId());
+
+			$row = array();
+			$row[] = $ped;
+			$row[] = $reg;
+
+			$_REQUEST['pedidos'][] = $row;
+		}
+		require_once __DIR__ .'/../view/pedidos_cliente_view.php';
+	}
+
 	public function getTelaInicial($post){
 		$_REQUEST['pedidos'] = array();
 

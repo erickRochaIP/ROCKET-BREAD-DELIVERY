@@ -20,6 +20,13 @@
 	<button>Cadastrar Produto</button>
 </form>
 
+<form action="index.php" method="get">
+
+	<input type="hidden" name="class" value="Cliente">
+	<input type="hidden" name="acao" value="getAllCliente">
+	<button>Ver todos os clientes</button>
+</form>
+
 <?php
 	foreach ($_REQUEST['pedidos'] as $pedido) {
 		echo 'Id Pedido: '.$pedido[0]->getId().' / Situacao: '.$pedido[1]->getSituacao();
