@@ -22,26 +22,42 @@
 		$classe = $_POST['class'];
 		$metodo = $_POST['acao'];
 
-		$classe .= 'Controller';
+		require_once __DIR__.'/controller/SessionController.php';
+		$sc = new SessionController();
+		$cm = $classe.$metodo;
+		if($sc->$cm()){
+			$classe .= 'Controller';
 
-		require_once __DIR__ .'/controller/'.$classe.'.php';
+			require_once __DIR__ .'/controller/'.$classe.'.php';
 
-		$obj = new $classe();
-		if(isset($_FILES['img'])){
-			$obj->$metodo($_POST, $_FILES);
+			$obj = new $classe();
+			if(isset($_FILES['img'])){
+				$obj->$metodo($_POST, $_FILES);
+			}else{
+				$obj->$metodo($_POST);
+			}			
 		}else{
-			$obj->$metodo($_POST);
+			echo "Acesso negado";
 		}
+
+
 	} else if(isset($_GET['class']) && isset($_GET['acao'])) {
 		$classe = $_GET['class'];
 		$metodo = $_GET['acao'];
 
-		$classe .= 'Controller';
+		require_once __DIR__.'/controller/SessionController.php';
+		$sc = new SessionController();
+		$cm = $classe.$metodo;
+		if($sc->$cm()){
+			$classe .= 'Controller';
 
-		require_once __DIR__ .'/controller/'.$classe.'.php';
+			require_once __DIR__ .'/controller/'.$classe.'.php';
 
-		$obj = new $classe();
-		$obj->$metodo($_GET);
+			$obj = new $classe();
+			$obj->$metodo($_GET);
+		}else{
+			echo "Acesso negado";
+		}
 	} else {
 		require_once __DIR__.'/controller/ProdutoController.php';
 		$obj = new ProdutoController();

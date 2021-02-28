@@ -23,9 +23,9 @@
 				return;
 			}
 
-			require __DIR__ .'/PedidoController.php';
-			$pdControl = new PedidoController();
-			$pdControl->getTelaInicial($post);
+			require __DIR__ .'/ProdutoController.php';
+			$pdControl = new ProdutoController();
+			$pdControl->getAllProdutoCarrinho($post);
 
 		}
 
