@@ -45,7 +45,8 @@
 			$usuario = new Usuario();
 			try{
 				$usuario = $usuario->cadastro($post['username'], $post['password'], $post['passwordconf']);
-				$this->login($post);
+				$_REQUEST['mensagem'] = "Usuario cadastrado!";
+				require_once __DIR__.'/../view/cadastro_view.php';
 			}catch(Exception $e){
 				$_REQUEST['mensagem'] = $e->getMessage();
 				require_once __DIR__.'/../view/cadastro_view.php';
