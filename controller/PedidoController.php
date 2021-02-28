@@ -32,6 +32,11 @@ class PedidoController {
 
 			$_REQUEST['pedidos'][] = $row;
 		}
+
+		require __DIR__.'/../model/Endereco.php';
+		$endereco = new Endereco();
+		$_REQUEST['endereco'] = $endereco->getEnderecoByClienteId($post['id_cliente']);
+
 		require_once __DIR__ .'/../view/pedidos_cliente_view.php';
 	}
 

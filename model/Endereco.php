@@ -47,6 +47,25 @@ class Endereco {
 		$this->cidade = $cidade;
 	}
 
+	public function getEnderecoByClienteId($id_cliente){
+		require __DIR__.'/../db_const.php';
+			$conec = new PDO($dsn, $user, $pass);
+		$sql = 'SELECT endereco.id, rua, bairro, numero, cidade FROM endereco JOIN cliente ON endereco.id = cliente.id_endereco WHERE cliente.id = :id_cliente';
+		$stmt = $conec->prepare($sql);
+		$stmt->bindValue(':id_cliente', $id_cliente, PDO::PARAM_INT);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+		$row = $stmt->fetch();
+
+		$this->setId($row['id']);
+		$this->setBairro($row['bairro']);
+		$this->setRua($row['rua']);
+		$this->setNumero($row['numero']);
+		$this->setCidade($row['cidade']);
+
+		return $this;
+	}
+
 	public function cadastro($rua, $bairro, $numero, $cidade){
 		require __DIR__.'/../db_const.php';
 			$conec = new PDO($dsn, $user, $pass);

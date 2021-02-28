@@ -1,4 +1,12 @@
 <?php
+	$endereco = $_REQUEST['endereco'];
+	echo "Endereco: Numero ".$endereco->getNumero();
+	echo ", Rua ".$endereco->getRua();
+	echo ", Bairro ".$endereco->getBairro();
+	echo ", Cidade ".$endereco->getCidade();
+?>
+<br>
+<?php
 	foreach ($_REQUEST['pedidos'] as $pedido) {
 		echo 'Id Pedido: '.$pedido[0]->getId().' / Situacao: '.$pedido[1]->getSituacao();
 		?>
