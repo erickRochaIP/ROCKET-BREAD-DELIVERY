@@ -8,19 +8,19 @@ if (isset($_SESSION['usuario'])){
     <?php
     if ($_SESSION['usuario'][2] >= 2){
     ?>
-        <form action="index.php" method="get">
+        <form class="m-2" action="index.php" method="get">
             <input type="hidden" name="class" value="Pedido">
             <input type="hidden" name="acao" value="getTelaInicial">
             <button class="btn btn-primary my-sm-0">Pedidos</button>
         </form>
 
-        <form action="index.php" method="get">
+        <form class="m-2" action="index.php" method="get">
             <input type="hidden" name="class" value="Cliente">
             <input type="hidden" name="acao" value="getAllCliente">
             <button class="btn btn-primary my-sm-0">Clientes</button>
         </form>
 
-        <form action="index.php" method="get">
+        <form class="m-2" action="index.php" method="get">
             <input type="hidden" name="class" value="Produto">
             <input type="hidden" name="acao" value="cadastrarProduto">
             <button class="btn btn-primary my-sm-0">Cadastrar Produto</button>
@@ -28,7 +28,7 @@ if (isset($_SESSION['usuario'])){
         <?php
         if ($_SESSION['usuario'][2] >= 3){
         ?>
-            <form action="index.php" method="get">
+            <form class="m-2" action="index.php" method="get">
                 <input type="hidden" name="class" value="Usuario">
                 <input type="hidden" name="acao" value="getTelaCadastro">
                 <button class="btn btn-success my-sm-0 ml-3">Cadastrar</button>
@@ -39,7 +39,7 @@ if (isset($_SESSION['usuario'])){
     <?php
     }
     ?>
-    <form action="index.php" method="get">
+    <form class="m-2" action="index.php" method="get">
     	<input type="hidden" name="class" value="Usuario">
     	<input type="hidden" name="acao" value="logout">
         <button class="btn btn-primary my-sm-0">Logout</button>
@@ -48,7 +48,7 @@ if (isset($_SESSION['usuario'])){
 <?php 
 }else{
 ?>
-    <form action="index.php" method="get">
+    <form class="m-2" action="index.php" method="get">
     	<input type="hidden" name="class" value="Usuario">
     	<input type="hidden" name="acao" value="getTelaLogin">
         <button class="btn btn-primary my-sm-0">Login</button>
