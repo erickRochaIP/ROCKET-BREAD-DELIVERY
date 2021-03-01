@@ -25,7 +25,11 @@ class ProdutoController {
 			$target = __DIR__.'/../images/'.$newname;
 			move_uploaded_file($files['img']['tmp_name'], $target);
 
-			echo "Produto salvo: ".$post['nome']." ".$post['descricao']." ".$post['preco']." ".$post['ativo'];			
+            echo "Produto salvo: <br>";
+            echo "Nome: ".$post['nome']."<br>";
+            echo "Descrição: ".$post['descricao']."<br>";
+            echo "Preço: ".$post['preco']."<br>";
+            echo "Ativo: ".$post['ativo']."<br>";
 		}else{
 			echo "Problemas na insercao";
 		}
