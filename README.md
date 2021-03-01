@@ -16,14 +16,14 @@ $ git clone https://github.com/erickRochaIP/ROCKET-BREAD-DELIVERY.git
 # Acesse o diretório do repositório
 $ cd ROCKET-BREAD-DELIVERY
 
-# Crie o banco de dados
+# Crie o banco de dados (Voccê vai precisar criar um usuário primeiro)
 $ mysql -u 'nome_de_usuario' -p < rocketBreadDelivery.sql
 ```
 
 Com o repositório clonado no diretório raíz e o banco de dados criado, agora só precisamos deixar essas informações disponíveis para o PHP. No diretório do repositório, crie o arquivo db_const.php no seguinte formato:
 ```
 <?php
-$db = 'rocketbreaddelivery';
+$db = 'rbd';
 $host = '127.0.0.1';
 $charset = 'utf8mb4';
 
