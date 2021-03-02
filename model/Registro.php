@@ -48,6 +48,22 @@ class Registro {
 		$this->situacao = $situacao;
 	}
 
+	public function getSituacaoTexto(){
+		switch ($this->situacao) {
+			case 1:
+				return "Em preparo";
+				break;
+			case 2:
+				return "A caminho";
+				break;
+			case 3:
+				return "Encerrado";
+				break;
+			default:
+				return "Sem registro";
+		}
+	}
+
 	public function getRegistroByIdPedido($id_pedido){
 		require __DIR__.'/../db_const.php';
 		$conec = new PDO($dsn, $user, $pass);

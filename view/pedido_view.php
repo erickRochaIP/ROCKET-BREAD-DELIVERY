@@ -22,21 +22,7 @@
 
 	<?php
 		echo "Situacao: ";
-		$sit = $registro->getSituacao();
-
-		switch($sit){
-			case 1:
-				echo "Em preparo";
-				break;
-			case 2:
-				echo "A caminho";
-				break;
-			case 3:
-				echo "Encerrado";
-				break;
-			default:
-				echo "Sem registro";
-		}
+		echo $registro->getSituacaoTexto();
 	?>
 	<br>
 

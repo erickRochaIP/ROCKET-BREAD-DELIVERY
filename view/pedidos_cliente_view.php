@@ -13,7 +13,10 @@
                 <?php foreach ($_REQUEST['pedidos'] as $pedido): ?>
                 <tr>
                 <td> <span><?php echo $pedido[0]->getId(); ?> </span> </td>
-                <td> <span><?php echo $pedido[1]->getSituacao(); ?> </span> </td>
+                <td> 
+                    <span><?php echo $pedido[1]->getSituacaoTexto(); ?> 
+                    </span> 
+                </td>
                 <td>
                     <form action="index.php" method="get">
                         <?php
