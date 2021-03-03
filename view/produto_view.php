@@ -36,6 +36,7 @@
                <hr>
             </div>
 
+            <div class="ml-4">
             <!-- row Só por segurança, se fosse dar 12 no total, nem precisava -->
             <form action="index.php" method="get">
             <div class="row"> 
@@ -60,7 +61,7 @@
             </div>
             </div> <!-- end row -->
             </form>
-            
+            </div>
         </div>
     </div>
 </div>
