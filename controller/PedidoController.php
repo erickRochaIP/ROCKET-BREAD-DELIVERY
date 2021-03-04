@@ -5,13 +5,29 @@ class PedidoController {
 	public function getItensPedidos($post){
 		$pedido = new Pedido();
 
-		$_REQUEST['itens'] = $pedido->getItensPedidos($post['id']);
+		$itens = $pedido->getItensPedidos($post['id']);
 
-		require __DIR__ .'/../model/Registro.php'; 
+		require_once __DIR__ .'/../model/Registro.php'; 
 		$registro = new Registro();
 		$_REQUEST['registro'] = $registro->getRegistroByIdPedido($post['id']);
 
 		$_REQUEST['id_pedido'] = $post['id'];
+
+		$_REQUEST['itens'] = array();
+
+		require_once __DIR__ .'/../model/Produto.php';
+
+		foreach ($itens as $item) {
+			$produto = new Produto();
+
+			$produto = $produto->getProdutoById($item->getIdProduto());
+
+			$row = array();
+			$row[] = $produto;
+			$row[] = $item;
+
+			$_REQUEST['itens'][] = $row;
+		}
 
 		require __DIR__.'/../view/pedido_view.php';
 	}

@@ -5,9 +5,7 @@
 	<table class="table">
         <thead>
 		<tr>
-			<th>Id</th>
-			<th>Id do pedido</th>
-			<th>Id do Produto</th>
+			<th>Produto</th>
 			<th>Quantidade</th>
 		</tr>
         </thead>
@@ -15,10 +13,8 @@
         <tbody>
 		<?php foreach($itens as $item): ?>
 		<tr>
-			<td><?php echo $item->getId(); ?></td>
-			<td><?php echo $item->getIdPedido(); ?></td>
-			<td><?php echo $item->getIdProduto(); ?></td>
-			<td><?php echo $item->getQuantidade(); ?></td>
+			<td><?php echo $item[0]->getNome(); ?></td>
+			<td><?php echo $item[1]->getQuantidade(); ?></td>
 		</tr>
 		<?php endforeach; ?>
         </tbody>
