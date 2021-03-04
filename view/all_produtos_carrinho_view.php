@@ -52,11 +52,6 @@
 		<button>Destruir sessao</button>
 	</form>
 	<br>
-	<form action="index.php" method="get">
-		<input type="hidden" name="class" value="ItemPedido">
-		<input type="hidden" name="acao" value="getCarrinho">
-		<button>Carrinho</button>
-	</form>
 
 
 </div>

@@ -48,6 +48,13 @@ if (isset($_SESSION['usuario'])){
 <?php 
 }else{
 ?>
+
+	<form action="index.php" method="get">
+		<input type="hidden" name="class" value="ItemPedido">
+		<input type="hidden" name="acao" value="getCarrinho">
+		<button class="btn btn-success"> <i class="fa fa-shopping-cart"></i> </button>
+	</form>
+
     <form class="m-2" action="index.php" method="get">
     	<input type="hidden" name="class" value="Usuario">
     	<input type="hidden" name="acao" value="getTelaLogin">
