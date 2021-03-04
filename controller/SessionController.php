@@ -55,6 +55,10 @@
 			return $this->decisao(1);
 		}
 
+		public function ItemPedidoeliminaItem(){
+			return $this->decisao(1);
+		}
+
 		public function PedidogetItensPedidos(){
 			return $this->decisao(2);
 		}

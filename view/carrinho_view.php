@@ -12,11 +12,14 @@
                     <div class="caption col-md-2">
                        <span> Quantia </span>
                     </div>
-                    <div class="caption col-md-8 text-left">
+                    <div class="caption col-md-6 text-left">
                        <span> Item </span>
                     </div>
                     <div class="caption col-md-2 text-right">
                        <span> Preço </span>
+                    </div>
+                    <div class="caption col-md-2 text-right">
+                       <span> Excluir </span>
                     </div>
                 </div>
                 <?php 
@@ -25,11 +28,21 @@
                         <div class="quantia-carr col-md-2 text-center">
                             <span> <?php echo $item[2]; ?> </span>
                         </div>
-                        <div class="nome-item-carr col-md-7 text-left">
+                        <div class="nome-item-carr col-md-5 text-left">
                             <span> <?php echo $item[0]; ?> </span>
                         </div>
                         <div class="preco-carr col-md-3 text-right">
                             <span>R$ <?php echo $item[1]; ?> </span>
+                        </div>
+                        <div class="quantia-carr col-md-2 text-center">
+                            <span> 
+                                <form action="index.php" method="get">
+                                    <input type="hidden" name="id_produto" value="<?php echo $item[4]; ?>">
+                                    <input type="hidden" name="class" value="ItemPedido">
+                                    <input type="hidden" name="acao" value="eliminaItem">
+                                    <button>X</button>
+                                </form>
+                            </span>
                         </div>
                         <?php 
                             $total += $item[3]
