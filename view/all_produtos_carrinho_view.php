@@ -46,11 +46,7 @@
         ?>
     </div> <! -- Fechar card-deck -->
 
-	<form class="mt-5" action="index.php" method="get">
-		<input type="hidden" name="class" value="Session">
-		<input type="hidden" name="acao" value="destroy_session">
-		<button>Destruir sessao</button>
-	</form>
+
 	<br>
 
 
