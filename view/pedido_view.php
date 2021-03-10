@@ -24,6 +24,10 @@
 	<?php
 		echo "Situação: ";
 		echo $registro->getSituacaoTexto();
+		echo "<br>";
+		echo $registro->getData();
+		echo " ";
+		echo $registro->getHora();
 	?>
 	<br>
 
