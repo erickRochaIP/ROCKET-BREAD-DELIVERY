@@ -49,5 +49,26 @@
 
 	<br>
 
-
 </div>
+
+<footer class="bg-light">
+  <div class="container-fluid p-4">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6">
+        Feito por 
+        <a href="https://github.com/mifegui">Eric</a> e
+        <a href="https://github.com/erickRochaIP">Erick</a>
+        <br>
+        no
+        <a href="https://github.com/erickRochaIP/ROCKET-BREAD-DELIVERY">Github</a>
+        </div>
+      <div class="col-md-6">
+        Use <span class="font-italic"> admin </span> e <span class="font-italic"> admin </span> como usuário e senha para fazer login
+       </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
